@@ -10,7 +10,7 @@ class Post extends Model
     public static function allPosts()
     {
         return app(Pipeline::class)
-            ->send(Post::query())
+            ->send(self::query())
             ->through([
                 \App\QueryFilters\Active::class,
                 \App\QueryFilters\Sort::class,
