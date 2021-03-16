@@ -10,6 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
+        factory(Post::class, 100)->create();
         $posts = Post::allPosts();
 
         return view('post.index', compact('posts'));
