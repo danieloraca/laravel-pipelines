@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/posts', [
     'uses' => 'PostController@index'
 ]);
+
+Route::get('/customers', 'CustomerController@index');
+Route::get('/customers/{customerId}', 'CustomerController@show');
+Route::get('/customers/{customerId}/update', 'CustomerController@update');
