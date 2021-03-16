@@ -24,3 +24,17 @@ Route::get('/posts', [
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/{customerId}', 'CustomerController@show');
 Route::get('/customers/{customerId}/update', 'CustomerController@update');
+
+Route::get('/generator', function () {
+    function happy($number) {
+        for ($i = 1; $i < $number; $i++) {
+            yield $i;
+        }
+    }
+
+    foreach (happy(1000) as $number) {
+        if ($number % 10 === 0) {
+            dump($number . ' passing');
+        }
+    }
+});
